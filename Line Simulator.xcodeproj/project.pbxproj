@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		842B997A20F49DF800DAEB3C /* ResultSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B997920F49DF800DAEB3C /* ResultSecondViewController.swift */; };
 		84B0EA5A20F343D20093FE83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0EA5920F343D20093FE83 /* AppDelegate.swift */; };
 		84B0EA5C20F343D20093FE83 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0EA5B20F343D20093FE83 /* FirstViewController.swift */; };
 		84B0EA5E20F343D20093FE83 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0EA5D20F343D20093FE83 /* SecondViewController.swift */; };
@@ -15,6 +16,8 @@
 		84B0EA6620F343D30093FE83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B0EA6420F343D30093FE83 /* LaunchScreen.storyboard */; };
 		84B0EA7120F343D30093FE83 /* Line_SimulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0EA7020F343D30093FE83 /* Line_SimulatorTests.swift */; };
 		84B0EA7C20F343D30093FE83 /* Line_SimulatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0EA7B20F343D30093FE83 /* Line_SimulatorUITests.swift */; };
+		84B0EA8A20F343E30093FE83 /* Machine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0EA8920F343E30093FE83 /* Machine.swift */; };
+		84B0EA8E20F36F190093FE83 /* ResultOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0EA8D20F36F190093FE83 /* ResultOneViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		842B997920F49DF800DAEB3C /* ResultSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSecondViewController.swift; sourceTree = "<group>"; };
 		84B0EA5620F343D20093FE83 /* Line Simulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Line Simulator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B0EA5920F343D20093FE83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84B0EA5B20F343D20093FE83 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +53,8 @@
 		84B0EA7720F343D30093FE83 /* Line SimulatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Line SimulatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B0EA7B20F343D30093FE83 /* Line_SimulatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line_SimulatorUITests.swift; sourceTree = "<group>"; };
 		84B0EA7D20F343D30093FE83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84B0EA8920F343E30093FE83 /* Machine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Machine.swift; sourceTree = "<group>"; };
+		84B0EA8D20F36F190093FE83 /* ResultOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultOneViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,8 @@
 		84B0EA5820F343D20093FE83 /* Line Simulator */ = {
 			isa = PBXGroup;
 			children = (
+				84B0EA8D20F36F190093FE83 /* ResultOneViewController.swift */,
+				842B997920F49DF800DAEB3C /* ResultSecondViewController.swift */,
 				84B0EA5920F343D20093FE83 /* AppDelegate.swift */,
 				84B0EA5B20F343D20093FE83 /* FirstViewController.swift */,
 				84B0EA5D20F343D20093FE83 /* SecondViewController.swift */,
@@ -106,6 +114,7 @@
 				84B0EA6220F343D30093FE83 /* Assets.xcassets */,
 				84B0EA6420F343D30093FE83 /* LaunchScreen.storyboard */,
 				84B0EA6720F343D30093FE83 /* Info.plist */,
+				84B0EA8920F343E30093FE83 /* Machine.swift */,
 			);
 			path = "Line Simulator";
 			sourceTree = "<group>";
@@ -260,7 +269,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B0EA5E20F343D20093FE83 /* SecondViewController.swift in Sources */,
+				84B0EA8A20F343E30093FE83 /* Machine.swift in Sources */,
+				842B997A20F49DF800DAEB3C /* ResultSecondViewController.swift in Sources */,
 				84B0EA5A20F343D20093FE83 /* AppDelegate.swift in Sources */,
+				84B0EA8E20F36F190093FE83 /* ResultOneViewController.swift in Sources */,
 				84B0EA5C20F343D20093FE83 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
