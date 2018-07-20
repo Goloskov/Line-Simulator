@@ -16,10 +16,33 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.tf1.delegate = self
+        self.tf2.delegate = self
+        self.tf3.delegate = self
+        self.tf4.delegate = self
+        self.tf5.delegate = self
+        self.tf6.delegate = self
+        self.tf7.delegate = self
+        self.tf9.delegate = self
+        self.tf10.delegate = self
+        self.tf11.delegate = self
+        self.tf12.delegate = self
+        self.tf13.delegate = self
+        self.tf14.delegate = self
+        self.tf15.delegate = self
         
-       
-        
-        //textFields.translatesAutoresizingMaskIntoConstraints = false
+        self.tf17.delegate = self
+        self.tf18.delegate = self
+        self.tf19.delegate = self
+        self.tf20.delegate = self
+        self.tf21.delegate = self
+        self.tf22.delegate = self
+        self.tf23.delegate = self
+        self.tf24.delegate = self
+        self.tf25.delegate = self
+        self.tf26.delegate = self
+        self.tf27.delegate = self
+        self.tf28.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -82,10 +105,37 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBOutlet weak var scroll: UIScrollView!
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        switch textField.tag {
+        case 1...6:
+            print ("Do nothing")
+        case 7...9:
+            scroll.setContentOffset(CGPoint (x:0, y:100), animated: true)
+        case 10:
+            scroll.setContentOffset(CGPoint (x:0, y:150), animated: true)
+        case 11...13:
+            scroll.setContentOffset(CGPoint (x:0, y:200), animated: true)
+        case 14...16:
+            scroll.setContentOffset(CGPoint (x:0, y:250), animated: true)
+        default:
+            scroll.setContentOffset(CGPoint (x:0, y:400), animated: true)
+            
+        }
+        
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        scroll.setContentOffset(CGPoint (x:0, y:0), animated: true)
+    }
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return (true)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     

@@ -39,14 +39,11 @@ class ResultSecondViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+ 
     }
     
     @IBAction func buttonClose(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
-        UserDefaults.standard.set(label1.text, forKey: "value")
-        UserDefaults.standard.set(label2.text, forKey: "value")
-        UserDefaults.standard.set(label3.text, forKey: "value")
     }
     
     @IBOutlet weak var label1: UILabel!

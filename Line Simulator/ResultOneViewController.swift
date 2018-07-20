@@ -47,11 +47,12 @@ class ResultOneViewController: UIViewController {
     
     @IBAction func buttonClose(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
-        UserDefaults.standard.set(label1.text, forKey: "value")
-        UserDefaults.standard.set(label2.text, forKey: "value")
-        UserDefaults.standard.set(label3.text, forKey: "value")
     }
 
+    
+ 
+    
+    
     @IBOutlet weak var label1: UILabel!
     @IBAction func slider1(_ sender: UISlider) {
         label1.text = String (sender.value)

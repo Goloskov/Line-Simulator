@@ -12,20 +12,40 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var textFields: UITextField!
     
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.textFields.delegate = self
-
-        //textFields.translatesAutoresizingMaskIntoConstraints = false
+        self.tf1.delegate = self
+        self.tf2.delegate = self
+        self.tf3.delegate = self
+        self.tf4.delegate = self
+        self.tf5.delegate = self
+        self.tf6.delegate = self
+        self.tf7.delegate = self
+        self.tf9.delegate = self
+        self.tf10.delegate = self
+        self.tf11.delegate = self
+        self.tf12.delegate = self
+        self.tf13.delegate = self
+        self.tf14.delegate = self
+        self.tf15.delegate = self
+        self.tf17.delegate = self
+        self.tf18.delegate = self
+        self.tf19.delegate = self
+        self.tf20.delegate = self
+        self.tf21.delegate = self
+        self.tf22.delegate = self
+        self.tf23.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
+   
+    
     @IBAction func buttonGo(_ sender: UIButton) {
         
         carding = CardingMachine (max: Double (tf1.text!) ?? 1, speed: Double (tf2.text!) ?? 1, mass: Double (tf3.text!) ?? 1, width: Double (tf4.text!) ?? 1)
@@ -42,6 +62,31 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
         UserDefaults.standard.set(tf19.text, forKey: "value19")
      
     }
+    
+    
+    @IBOutlet weak var scroll: UIScrollView!
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        switch textField.tag {
+        case 1...5:
+            print ("Do nothing")
+        case 6...9:
+            scroll.setContentOffset(CGPoint (x:0, y:100), animated: true)
+        case 10...11:
+            scroll.setContentOffset(CGPoint (x:0, y:200), animated: true)
+        case 12...13:
+            scroll.setContentOffset(CGPoint (x:0, y:250), animated: true)
+        default:
+            scroll.setContentOffset(CGPoint (x:0, y:400), animated: true)
+            
+        }
+       
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        scroll.setContentOffset(CGPoint (x:0, y:0), animated: true)
+    }
+    
+    
+    
     
     override func viewDidAppear(_ animated: Bool) {
         if let x = UserDefaults.standard.object(forKey: "value1") as? String
@@ -79,6 +124,10 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return (true)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
  
 
