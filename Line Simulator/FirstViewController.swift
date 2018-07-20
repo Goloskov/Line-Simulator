@@ -10,14 +10,10 @@ import UIKit
 
 class FirstViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var textFields: UITextField!
-    
-  
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
+
         self.tf1.delegate = self
         self.tf2.delegate = self
         self.tf3.delegate = self
@@ -40,12 +36,13 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
         self.tf22.delegate = self
         self.tf23.delegate = self
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
    
     
+    
+    //=========================================================================Button go
     @IBAction func buttonGo(_ sender: UIButton) {
         
         carding = CardingMachine (max: Double (tf1.text!) ?? 1, speed: Double (tf2.text!) ?? 1, mass: Double (tf3.text!) ?? 1, width: Double (tf4.text!) ?? 1)
@@ -60,10 +57,11 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
         UserDefaults.standard.set(tf4.text, forKey: "value4")
         UserDefaults.standard.set(tf11.text, forKey: "value11")
         UserDefaults.standard.set(tf19.text, forKey: "value19")
-     
     }
     
     
+    
+    //=========================================================================Keyboard scroll
     @IBOutlet weak var scroll: UIScrollView!
     func textFieldDidBeginEditing(_ textField: UITextField) {
         switch textField.tag {
@@ -87,7 +85,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     
     
     
-    
+    //=========================================================================Save values
     override func viewDidAppear(_ animated: Bool) {
         if let x = UserDefaults.standard.object(forKey: "value1") as? String
         {
@@ -112,6 +110,8 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    
+    //=========================================================================Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showResult") {
             let secondViewController = segue.destination as! ResultOneViewController
@@ -121,11 +121,12 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    
+    //==========================================================================Setting of keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return (true)
     }
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }

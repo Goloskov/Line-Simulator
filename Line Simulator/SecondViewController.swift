@@ -10,12 +10,12 @@ import UIKit
 
 class SecondViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet var textFields: [UITextField]!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
         self.tf1.delegate = self
         self.tf2.delegate = self
         self.tf3.delegate = self
@@ -30,7 +30,6 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         self.tf13.delegate = self
         self.tf14.delegate = self
         self.tf15.delegate = self
-        
         self.tf17.delegate = self
         self.tf18.delegate = self
         self.tf19.delegate = self
@@ -50,6 +49,9 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
+     //=========================================================================Button go
     @IBAction func buttonGo(_ sender: UIButton) {
         
         carding = CardingMachine (max: Double (tf1.text!) ?? 1, speed: Double (tf2.text!) ?? 1, mass: Double (tf3.text!) ?? 1, width: Double (tf4.text!) ?? 1)
@@ -66,9 +68,11 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         UserDefaults.standard.set(tf11.text, forKey: "value11")
         UserDefaults.standard.set(tf19.text, forKey: "value19")
         UserDefaults.standard.set(tf24.text, forKey: "value24")
-        
     }
     
+    
+    
+     //=========================================================================Save values
     override func viewDidAppear(_ animated: Bool) {
         if let x = UserDefaults.standard.object(forKey: "value1") as? String
         {
@@ -97,6 +101,8 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    
+     //=========================================================================Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showResult2") {
             let secondViewController = segue.destination as! ResultSecondViewController
@@ -105,6 +111,10 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    
+    
+    
+     //=========================================================================Scroll keyboard
     @IBOutlet weak var scroll: UIScrollView!
     func textFieldDidBeginEditing(_ textField: UITextField) {
         switch textField.tag {
@@ -129,11 +139,12 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    
+     //=========================================================================Settings of keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return (true)
     }
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }

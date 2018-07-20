@@ -20,7 +20,6 @@ class ResultOneViewController: UIViewController {
     @IBOutlet weak var lbl3: UILabel!
     @IBOutlet weak var lbl4: UILabel!
     @IBOutlet weak var lbl5: UILabel!
-    
     var line : (CardingMachine, CrossLapper, Drafter, NeedleLoom, Drafter, NeedleLoom)?
     
    
@@ -36,15 +35,14 @@ class ResultOneViewController: UIViewController {
         label1.text = String (line!.0.outputSpeed.clean)
         label2.text = String (line!.0.outputMass.clean)
         label3.text = String (line!.1.outputWidth.clean)
-        // Do any additional setup after loading the view.
     }
-
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //=========================================================================Button back
     @IBAction func buttonClose(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
@@ -52,7 +50,7 @@ class ResultOneViewController: UIViewController {
     
  
     
-    
+    //=========================================================================Sliders
     @IBOutlet weak var label1: UILabel!
     @IBAction func slider1(_ sender: UISlider) {
         label1.text = String (sender.value)

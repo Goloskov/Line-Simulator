@@ -17,7 +17,6 @@ class ResultSecondViewController: UIViewController {
     @IBOutlet weak var lbl3: UILabel!
     @IBOutlet weak var lbl4: UILabel!
     @IBOutlet weak var lbl5: UILabel!
-    
     var line : (CardingMachine, CrossLapper, Drafter, NeedleLoom, Drafter, NeedleLoom,NeedleLoom)?
     
     
@@ -35,17 +34,21 @@ class ResultSecondViewController: UIViewController {
         label3.text = String (line!.1.outputWidth.clean)
         // Do any additional setup after loading the view.
     }
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
- 
     }
     
+    
+    
+    //=========================================================================Button back
     @IBAction func buttonClose(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+        
     }
     
+    
+    
+    //=========================================================================Sliders
     @IBOutlet weak var label1: UILabel!
     @IBAction func slider1(_ sender: UISlider) {
         label1.text = String (sender.value)
